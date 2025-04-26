@@ -1,1 +1,13 @@
-<p>coffee-card works!</p>
+<p>This actually works</p>
+
+<div class="coffee-card">
+    <img [src]="coffee().imageUrl" [alt]="coffee().name" class="coffee-image">
+    <div class="coffee-content">
+        <h3 class="coffee-name">{{ coffee().name }}</h3>
+        <p class="coffee-description">{{ coffee().description }}</p>
+        <div class="coffee-footer">
+            <span class="coffee-price">Rs. {{ coffee().price }}</span>
+            <!-- <button class="order-button" (click)="onOrderNow()">Order Now</button> -->
+        </div>
+    </div>
+</div>
