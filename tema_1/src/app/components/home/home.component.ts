@@ -1,24 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, OnInit, signal } from '@angular/core';
 import { CoffeeCardComponent } from "../coffee-card/coffee-card.component";
+import { HeaderComponent } from '../header/header.component';
 import { Coffee } from '../../interfaces/coffee.interface';
 import { CoffeeService } from '../../services/coffee-service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CoffeeCardComponent],
+  imports: [CommonModule, FormsModule, CoffeeCardComponent, HeaderComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit{
 
-  arrayOfCoffee:Coffee[] = [];
-  coffeeService: CoffeeService = new CoffeeService;
+  coffees!: Coffee[]
 
+  constructor(private coffeeService: CoffeeService) {}
+ 
   ngOnInit(): void {
-    this.getCoffee()
+    this.coffees = this.coffeeService.getCoffees();
   }
+  
+  searchTerm = signal('');
 
-  getCoffee(){
-    this.arrayOfCoffee = this.coffeeService.getCoffees()
+  orderedCoffee = signal('');
+
+  filteredList = computed(() => 
+    this.coffees.filter(coffee => 
+      coffee.name.toLowerCase().includes(this.searchTerm().toLowerCase())
+    )
+  );
+
+  onOrder(coffeeName: string) {
+    this.orderedCoffee.set(coffeeName);
   }
 }

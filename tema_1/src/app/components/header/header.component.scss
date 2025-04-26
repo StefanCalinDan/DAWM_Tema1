@@ -1,0 +1,37 @@
+.hero-section {
+    position: relative;
+    background-image: url('/assets/images/welcome.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 12px;
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .ordered-text {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #ffd700;
+    }
+
+}

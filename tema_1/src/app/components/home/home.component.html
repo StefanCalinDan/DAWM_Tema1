@@ -1,7 +1,22 @@
-<p>home works!</p>
+<div class = "home-container">
 
-<div>
-    @for(coffee of arrayOfCoffee; track coffee){
-    <app-coffee-card [coffee]="coffee"></app-coffee-card>
-    }
+    <app-header [orderedCoffee]="orderedCoffee()"></app-header>
+
+    <div class = "spacer"></div>
+
+    <div class = "search-container">
+        <input [(ngModel)]="searchTerm" class = "search-input" placeholder="Search for your favorite coffee..." />
+    </div>
+    
+
+    <h2>Our Offers</h2>
+
+    <div class="coffee-list">
+        @for(coffee of filteredList(); track coffee) {
+        <app-coffee-card [coffee]="coffee" (orderCoffee)="onOrder($event)"></app-coffee-card>
+        }
+    </div>
+
+    <div id = "footer"></div>
 </div>
+

@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Coffee } from '../interfaces/coffee.interface'; // adaptezi path-ul dacă e nevoie
+import { Coffee } from '../interfaces/coffee.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -11,14 +11,56 @@ export class CoffeeService {
     private composeListOfCoffees(): Coffee[] {
         return [
             {
-                name: 'Lungo Coffee',
+                name: 'Scurto',
+                description: 'An espresso coffee drink, topped with a small amount of milk.',
+                price: 199,
+                imageUrl: '../../assets/images/photo.jpg'
+            },
+            {
+                name: 'Scurto',
+                description: 'An espresso coffee drink, topped with a small amount of milk.',
+                price: 199,
+                imageUrl: '../../assets/images/photo.jpg'
+            },
+            {
+                name: 'Scurto',
+                description: 'An espresso coffee drink, topped with a small amount of milk.',
+                price: 199,
+                imageUrl: '../../assets/images/photo.jpg'
+            },
+            {
+                name: 'Scurto',
+                description: 'An espresso coffee drink, topped with a small amount of milk.',
+                price: 199,
+                imageUrl: '../../assets/images/photo.jpg'
+            },
+            {
+                name: 'Scurto',
+                description: 'An espresso coffee drink, topped with a small amount of milk.',
+                price: 199,
+                imageUrl: '../../assets/images/photo.jpg'
+            },
+            {
+                name: 'Scurto',
+                description: 'An espresso coffee drink, topped with a small amount of milk.',
+                price: 199,
+                imageUrl: '../../assets/images/photo.jpg'
+            },
+            {
+                name: 'Scurto',
+                description: 'An espresso coffee drink, topped with a small amount of milk.',
+                price: 199,
+                imageUrl: '../../assets/images/photo.jpg'
+            },
+            {
+                name: 'Scurto',
                 description: 'An espresso coffee drink, topped with a small amount of milk.',
                 price: 199,
                 imageUrl: '../../assets/images/photo.jpg'
             },
 
             {
-                name: 'Lungo Coffee',
+                name: 'Lungo',
                 description: 'An espresso coffee drink, topped with a small amount of milk.',
                 price: 199,
                 imageUrl: 'assets/images/photo.jpg'

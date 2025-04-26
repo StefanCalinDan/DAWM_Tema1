@@ -11,9 +11,9 @@ import { Coffee } from '../../interfaces/coffee.interface';
 })
 export class CoffeeCardComponent {
   readonly coffee = input.required<Coffee>();
-  //readonly orderCoffee = output<string>();
+  readonly orderCoffee = output<string>();
 
-  // onOrderNow() {
-  //   this.orderCoffee.emit(this.coffee().name);
-  // }
+  onOrderNow() {
+    this.orderCoffee.emit(this.coffee().name);
+  }
 }
