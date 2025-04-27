@@ -4,7 +4,11 @@
       <p>We serve the richest coffee<br>in the city!</p>
       
       @if (orderedCoffee()) {
-        <p class="ordered-text">You ordered: {{ orderedCoffee() }}</p>
+        
+        <div class="ordered-text">
+          <p>You ordered: {{ orderedCoffee() }}</p>
+          <button class ="clear-order-button" (click) ="clearOrder()">Clear Order</button>
+        </div>
       }
     </div>
   </header>

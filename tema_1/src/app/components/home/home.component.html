@@ -1,13 +1,26 @@
-<div class = "home-container">
+<div class="home-container">
 
-    <app-header [orderedCoffee]="orderedCoffee()"></app-header>
+    <app-header [orderedCoffee]="orderedCoffee()"  (clearOrderEvent)="clearOrderedCoffee()"></app-header>
 
-    <div class = "spacer"></div>
 
-    <div class = "search-container">
-        <input [(ngModel)]="searchTerm" class = "search-input" placeholder="Search for your favorite coffee..." />
+    <div class="spacer">
+  
+        <div class="categories-header">
+          <h3>Pick your preferred category or search your favorite coffee by name</h3>
+        </div>
+      
+        <div class="categories-icons">
+          @for(icon of icons; track icon) {
+            <app-icon-button [icon]="icon" (searchCategory)="onIconClick($event)"></app-icon-button>
+          }
+        </div>
+      
+      </div>
+
+    <div class="search-container">
+        <input [(ngModel)]="searchTerm" class="search-input" placeholder="Search for your favorite coffee..." />
     </div>
-    
+
 
     <h2>Our Offers</h2>
 
@@ -17,6 +30,5 @@
         }
     </div>
 
-    <div id = "footer"></div>
+    <div id="footer"></div>
 </div>
-

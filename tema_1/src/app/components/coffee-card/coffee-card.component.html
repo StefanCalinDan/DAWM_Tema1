@@ -4,7 +4,7 @@
         <h3 class="coffee-name">{{ coffee().name }}</h3>
         <p class="coffee-description">{{ coffee().description }}</p>
         <div class="coffee-footer">
-            <span class="coffee-price">Rs. {{ coffee().price }}</span>
+            <span class="coffee-price">${{ coffee().price }}</span>
             <button class="order-button" (click)="onOrderNow()">Order Now</button>
         </div>
     </div>

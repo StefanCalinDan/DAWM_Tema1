@@ -1,10 +1,11 @@
 .coffee-card {
+    display:flex;
     flex-direction: column;
     background: #eeebe6;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 225px;
+    width: 220px;
     transition: transform 0.2s ease;
 
     &:hover {
@@ -31,6 +32,7 @@
     }
 
     .coffee-description {
+        height:100px;
         font-size: 14px;
         color: #666;
         margin-bottom: auto;
